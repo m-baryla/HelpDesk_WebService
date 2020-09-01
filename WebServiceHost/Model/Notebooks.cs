@@ -13,7 +13,7 @@ namespace WebServiceHost.Model
         public string CompanyFixedAsset { get; set; }
         public string TagService { get; set; }
         public string Location { get; set; }
-        public string FirstName { get; set; }
+        public string User { get; set; }
         public string Office { get; set; }
         public string IP { get; set; }
         public string ModelNotebooks { get; set; }

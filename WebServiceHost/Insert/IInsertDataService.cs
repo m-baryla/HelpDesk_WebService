@@ -13,17 +13,17 @@ namespace WebServiceHost.Insert
     {
         [OperationContract]
         string InsertComputer(string _computerName, string _operatingSystem, string _companyFixedAsset,
-            string _tagService, string _location, string _firstName, string _office, string _ip, string _model,
+            string _tagService, string _location, string _user, string _office, string _ip, string _model,
             string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate);
 
         [OperationContract]
         string InsertNotebooks(string _notebooksName, string _operatingSystem, string _companyFixedAsset,
-            string _tagService, string _location, string _firstName, string _office, string _ip, string _model,
+            string _tagService, string _location, string _user, string _office, string _ip, string _model,
             string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate);
 
         [OperationContract]
         string InsertMonitors(string _companyFixedAsset, string _tagService, string _location,
-            string _firstName, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate);
+            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate);
 
         [OperationContract]
         string InsertComboBoxCPU(string _value);

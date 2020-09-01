@@ -11,7 +11,7 @@ namespace WebServiceHost.Model
         public string CompanyFixedAsset { get; set; }
         public string TagService { get; set; }
         public string Location { get; set; }
-        public string FirstName { get; set; }
+        public string User { get; set; }
         public string ModelMonitors { get; set; }
         public string Coments { get; set; }
         public DateTime WarrantyDate { get; set; }

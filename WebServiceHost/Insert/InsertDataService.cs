@@ -20,7 +20,7 @@ namespace WebServiceHost.Insert
         readonly LoggerUseTools _loggerUse = new LoggerUseTools("InsertSourceWebService");
 
         public string InsertComputer(string _computerName, string _operatingSystem, string _companyFixedAsset,
-            string _tagService, string _location, string _firstName, string _office, string _ip, string _model,
+            string _tagService, string _location, string _user, string _office, string _ip, string _model,
             string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate)
         {
             try
@@ -36,7 +36,7 @@ namespace WebServiceHost.Insert
                         CompanyFixedAsset = _companyFixedAsset,
                         TagService = _tagService,
                         Location = _location,
-                        FirstName = _firstName,
+                        User = _user,
                         Office = _office,
                         IP = _ip,
                         ModelComputer = _model,
@@ -50,7 +50,7 @@ namespace WebServiceHost.Insert
                     });
 
                     connection.Execute("spAdd_New_Computer @CompterName,@OperatingSystem,@CompanyFixedAsset," +
-                                       "@TagService,@Location,@FirstName,@Office,@IP,@ModelComputer,@CPU,@RAM,@HardDrive," +
+                                       "@TagService,@Location,@User,@Office,@IP,@ModelComputer,@CPU,@RAM,@HardDrive," +
                                        "@Coments,@PurchaseDate,@WarrantyDate,@Barcode", computers);
 
                     _loggerUse.InfoLog("Insert Computer -> Successful : " + _computerName);
@@ -67,7 +67,7 @@ namespace WebServiceHost.Insert
             }
         }
         public string InsertNotebooks(string _notebooksName, string _operatingSystem, string _companyFixedAsset,
-            string _tagService, string _location, string _firstName, string _office, string _ip, string _model,
+            string _tagService, string _location, string _user, string _office, string _ip, string _model,
             string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate)
         {
             try
@@ -83,7 +83,7 @@ namespace WebServiceHost.Insert
                         CompanyFixedAsset = _companyFixedAsset,
                         TagService = _tagService,
                         Location = _location,
-                        FirstName = _firstName,
+                        User = _user,
                         Office = _office,
                         IP = _ip,
                         ModelNotebooks = _model,
@@ -97,7 +97,7 @@ namespace WebServiceHost.Insert
                     });
 
                     connection.Execute("spAdd_New_Notebooks @NotebooksName,@OperatingSystem,@CompanyFixedAsset," +
-                                       "@TagService,@Location,@FirstName,@Office,@IP,@ModelNotebooks,@CPU,@RAM,@HardDrive," +
+                                       "@TagService,@Location,@User,@Office,@IP,@ModelNotebooks,@CPU,@RAM,@HardDrive," +
                                        "@Coments,@PurchaseDate,@WarrantyDate,@Barcode", notebooks);
 
 
@@ -114,7 +114,7 @@ namespace WebServiceHost.Insert
             }
         }
         public string InsertMonitors(string _companyFixedAsset, string _tagService, string _location,
-           string _firstName, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate)
+           string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace WebServiceHost.Insert
                         CompanyFixedAsset = _companyFixedAsset,
                         TagService = _tagService,
                         Location = _location,
-                        FirstName = _firstName,
+                        User = _user,
                         ModelMonitors = _model,
                         Coments = _coments,
                         PurchaseDate = purchaseDate,
@@ -136,7 +136,7 @@ namespace WebServiceHost.Insert
                     });
 
                     connection.Execute("spAdd_New_Monitors @CompanyFixedAsset," +
-                                       "@TagService,@Location,@FirstName,@ModelMonitors,@Coments," +
+                                       "@TagService,@Location,@User,@ModelMonitors,@Coments," +
                                        "@PurchaseDate,@WarrantyDate,@Barcode", monitors);
 
                     _loggerUse.InfoLog("Insert Monitors -> Successful : " + _model);

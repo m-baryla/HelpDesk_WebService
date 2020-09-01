@@ -37,5 +37,9 @@ namespace WebServiceHost.FillComboBox
 
         [OperationContract]
         List<string> FillComboBoxModelNotebooks();
+
+        [OperationContract]
+        List<string> vwFillComboBoxUsers();
+
     }
 }

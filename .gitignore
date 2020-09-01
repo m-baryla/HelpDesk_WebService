@@ -1,1 +1,8 @@
 *.txt
+HelpDeskDataBase
+.dgml
+.vs/
+bin/
+obj/
+*.suo
+*.cache

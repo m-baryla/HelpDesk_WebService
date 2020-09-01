@@ -16,7 +16,7 @@ namespace WebServiceHost.Update
         readonly LoggerUseTools _loggerUse = new LoggerUseTools("UpdateSourceWebService");
 
         public string UpdateComputer(int _id, string _computerName, string _operatingSystem, string _companyFixedAsset,
-           string _tagService, string _location, string _firstName, string _office, string _ip, string _model,
+           string _tagService, string _location, string _user, string _office, string _ip, string _model,
            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate)
         {
             try
@@ -33,7 +33,7 @@ namespace WebServiceHost.Update
                         CompanyFixedAsset = _companyFixedAsset,
                         TagService = _tagService,
                         Location = _location,
-                        FirstName = _firstName,
+                        User = _user,
                         Office = _office,
                         IP = _ip,
                         ModelComputer = _model,
@@ -47,7 +47,7 @@ namespace WebServiceHost.Update
                     });
 
                     connection.Execute("spUpdate_Computers @Id,@CompterName,@OperatingSystem,@CompanyFixedAsset," +
-                                       "@TagService,@Location,@FirstName,@Office,@IP,@ModelComputer,@CPU,@RAM,@HardDrive," +
+                                       "@TagService,@Location,@User,@Office,@IP,@ModelComputer,@CPU,@RAM,@HardDrive," +
                                        "@Coments,@PurchaseDate,@WarrantyDate,@Barcode", computers);
 
                     _loggerUse.InfoLog("Update Computer -> Successful : " + _computerName);
@@ -64,7 +64,7 @@ namespace WebServiceHost.Update
 
         }
         public string UpdateNotebooks(int id, string _notebooksName, string _operatingSystem, string _companyFixedAsset,
-            string _tagService, string _location, string _firstName, string _office, string _ip, string _model,
+            string _tagService, string _location, string _user, string _office, string _ip, string _model,
             string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate)
         {
             try
@@ -81,7 +81,7 @@ namespace WebServiceHost.Update
                         CompanyFixedAsset = _companyFixedAsset,
                         TagService = _tagService,
                         Location = _location,
-                        FirstName = _firstName,
+                        User = _user,
                         Office = _office,
                         IP = _ip,
                         ModelNotebooks = _model,
@@ -95,7 +95,7 @@ namespace WebServiceHost.Update
                     });
 
                     connection.Execute("spUpdate_Notebooks @Id, @NotebooksName,@OperatingSystem,@CompanyFixedAsset," +
-                                       "@TagService,@Location,@FirstName,@Office,@IP,@ModelNotebooks,@CPU,@RAM,@HardDrive," +
+                                       "@TagService,@Location,@User,@Office,@IP,@ModelNotebooks,@CPU,@RAM,@HardDrive," +
                                        "@Coments,@PurchaseDate,@WarrantyDate,@Barcode", notebooks);
 
                     _loggerUse.InfoLog("Update Notebooks -> Successful : " + _notebooksName);
@@ -112,7 +112,7 @@ namespace WebServiceHost.Update
         }
 
         public string UpdateMonitors(int _id, string _companyFixedAsset, string _tagService, string _location,
-            string _firstName, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate)
+            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace WebServiceHost.Update
                         CompanyFixedAsset = _companyFixedAsset,
                         TagService = _tagService,
                         Location = _location,
-                        FirstName = _firstName,
+                        User = _user,
                         ModelMonitors = _model,
                         Coments = _coments,
                         PurchaseDate = purchaseDate,
@@ -136,7 +136,7 @@ namespace WebServiceHost.Update
                     });
 
                     connection.Execute("spUpdate_Monitors @Id, @CompanyFixedAsset," +
-                                       "@TagService,@Location,@FirstName,@ModelMonitors,@Coments," +
+                                       "@TagService,@Location,@User,@ModelMonitors,@Coments," +
                                        "@PurchaseDate,@WarrantyDate,@Barcode", monitors);
 
                     _loggerUse.InfoLog("Update Monitors -> Successful : " + _model);

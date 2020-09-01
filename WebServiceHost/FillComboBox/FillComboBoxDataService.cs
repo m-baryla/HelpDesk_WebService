@@ -75,5 +75,12 @@ namespace WebServiceHost.FillComboBox
                 return connection.Query<string>("select * from wvFillComboBoxModelNotebooks").ToList();
             }
         }
+        public List<string> vwFillComboBoxUsers()
+        {
+            using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
+            {
+                return connection.Query<string>("select * from vwFillComboBoxUsers").ToList();
+            }
+        }
     }
 }
