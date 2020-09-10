@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerLibrary", "LoggerLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceHost", "WebServiceHost\WebServiceHost.csproj", "{35431E97-D6A0-4125-AFC2-D094DCD7CFF2}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HelpDeskDataBase", "..\HelpDesk_DataBase\HelpDeskDataBase.sqlproj", "{EFF50290-FB58-4754-B30E-B2DA670A0E68}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +27,6 @@ Global
 		{35431E97-D6A0-4125-AFC2-D094DCD7CFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35431E97-D6A0-4125-AFC2-D094DCD7CFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35431E97-D6A0-4125-AFC2-D094DCD7CFF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFF50290-FB58-4754-B30E-B2DA670A0E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFF50290-FB58-4754-B30E-B2DA670A0E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFF50290-FB58-4754-B30E-B2DA670A0E68}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{EFF50290-FB58-4754-B30E-B2DA670A0E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFF50290-FB58-4754-B30E-B2DA670A0E68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFF50290-FB58-4754-B30E-B2DA670A0E68}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

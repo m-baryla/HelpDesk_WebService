@@ -37,45 +37,45 @@ namespace WebServiceHost.FillComboBox
         {
             using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
             {
-                return connection.Query<string>("select * from wvFillComboBoxCPU").ToList();
+                return connection.Query<string>("select * from vwFillComboBoxCPU").ToList();
             }
         }
         public List<string> FillComboBoxHardDrive()
         {
             using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
             {
-                return connection.Query<string>("select * from wvFillComboBoxHardDrive").ToList();
+                return connection.Query<string>("select * from vwFillComboBoxHardDrive").ToList();
             }
         }
         public List<string> FillComboBoxRAM()
         {
             using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
             {
-                return connection.Query<string>("select * from wvFillComboBoxRAM").ToList();
+                return connection.Query<string>("select * from vwFillComboBoxRAM").ToList();
             }
         }
         public List<string> FillComboBoxModelComputer()
         {
             using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
             {
-                return connection.Query<string>("select * from wvFillComboBoxModelComputer").ToList();
+                return connection.Query<string>("select * from vwFillComboBoxModelComputer").ToList();
             }
         }
         public List<string> FillComboBoxModelMonitors()
         {
             using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
             {
-                return connection.Query<string>("select * from wvFillComboBoxModelMonitors").ToList();
+                return connection.Query<string>("select * from vwFillComboBoxModelMonitors").ToList();
             }
         }
         public List<string> FillComboBoxModelNotebooks()
         {
             using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
             {
-                return connection.Query<string>("select * from wvFillComboBoxModelNotebooks").ToList();
+                return connection.Query<string>("select * from vwFillComboBoxModelNotebooks").ToList();
             }
         }
-        public List<string> vwFillComboBoxUsers()
+        public List<string> FillComboBoxUsers()
         {
             using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
             {
