@@ -24,6 +24,6 @@ namespace WebServiceHost.Update
 
         [OperationContract]
         string UpdateMonitors(int _id, string _companyFixedAsset, string _tagService, string _location,
-            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate);
+            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode);
     }
 }

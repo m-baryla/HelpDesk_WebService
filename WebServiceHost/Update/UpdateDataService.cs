@@ -113,7 +113,7 @@ namespace WebServiceHost.Update
         }
 
         public string UpdateMonitors(int _id, string _companyFixedAsset, string _tagService, string _location,
-            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate)
+            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
         {
             try
             {
@@ -133,12 +133,13 @@ namespace WebServiceHost.Update
                         Coments = _coments,
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
-                        Barcode = "test barcode"
+                        Barcode = _barcode,
+                        QRCode = _qrCode
                     });
 
                     connection.Execute("spUpdate_Monitors @Id, @CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@ModelMonitors,@Coments," +
-                                       "@PurchaseDate,@WarrantyDate,@Barcode", monitors);
+                                       "@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", monitors);
 
                     _loggerUse.InfoLog("Update Monitors -> Successful : " + _model);
 

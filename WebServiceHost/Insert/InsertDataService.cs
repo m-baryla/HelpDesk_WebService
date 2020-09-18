@@ -115,7 +115,7 @@ namespace WebServiceHost.Insert
             }
         }
         public string InsertMonitors(string _companyFixedAsset, string _tagService, string _location,
-           string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate)
+           string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
         {
             try
             {
@@ -133,12 +133,13 @@ namespace WebServiceHost.Insert
                         Coments = _coments,
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
-                        Barcode = "test barcode"
+                        Barcode = _barcode,
+                        QRCode = _qrCode
                     });
 
                     connection.Execute("spAdd_New_Monitors @CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@ModelMonitors,@Coments," +
-                                       "@PurchaseDate,@WarrantyDate,@Barcode", monitors);
+                                       "@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", monitors);
 
                     _loggerUse.InfoLog("Insert Monitors -> Successful : " + _model);
 

@@ -23,7 +23,7 @@ namespace WebServiceHost.Insert
 
         [OperationContract]
         string InsertMonitors(string _companyFixedAsset, string _tagService, string _location,
-            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate);
+            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode);
 
         [OperationContract]
         string InsertComboBoxCPU(string _value);
