@@ -17,7 +17,7 @@ namespace WebServiceHost.Update
 
         public string UpdateComputer(int _id, string _computerName, string _operatingSystem, string _companyFixedAsset,
            string _tagService, string _location, string _user, string _office, string _ip, string _model,
-           string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate)
+           string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
         {
             try
             {
@@ -43,12 +43,13 @@ namespace WebServiceHost.Update
                         Coments = _coments,
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
-                        Barcode = "test barcode"
+                        Barcode = _barcode,
+                        QRCode = _qrCode
                     });
 
                     connection.Execute("spUpdate_Computers @Id,@CompterName,@OperatingSystem,@CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@Office,@IP,@ModelComputer,@CPU,@RAM,@HardDrive," +
-                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode", computers);
+                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", computers);
 
                     _loggerUse.InfoLog("Update Computer -> Successful : " + _computerName);
 

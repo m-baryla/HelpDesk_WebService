@@ -23,7 +23,9 @@ namespace WebServiceHost.Model
         public string Coments { get; set; }
         public DateTime WarrantyDate { get; set; }
         public DateTime PurchaseDate { get; set; }
-        public string Barcode { get; set; }
+        public byte [] Barcode { get; set; }
+        public byte[] QRCode { get; set; }
+
 
     }
 
