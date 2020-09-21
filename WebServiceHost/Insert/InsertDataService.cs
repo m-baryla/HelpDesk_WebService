@@ -69,7 +69,7 @@ namespace WebServiceHost.Insert
         }
         public string InsertNotebooks(string _notebooksName, string _operatingSystem, string _companyFixedAsset,
             string _tagService, string _location, string _user, string _office, string _ip, string _model,
-            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate)
+            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
         {
             try
             {
@@ -94,12 +94,13 @@ namespace WebServiceHost.Insert
                         Coments = _coments,
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
-                        Barcode = "test barcode"
+                        Barcode = _barcode,
+                        QRCode = _qrCode
                     });
 
                     connection.Execute("spAdd_New_Notebooks @NotebooksName,@OperatingSystem,@CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@Office,@IP,@ModelNotebooks,@CPU,@RAM,@HardDrive," +
-                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode", notebooks);
+                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", notebooks);
 
 
                     _loggerUse.InfoLog("Insert Notebooks -> Successful : " + _notebooksName);
