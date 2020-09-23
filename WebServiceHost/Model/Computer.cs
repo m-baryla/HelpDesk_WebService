@@ -25,6 +25,8 @@ namespace WebServiceHost.Model
         public DateTime PurchaseDate { get; set; }
         public byte [] Barcode { get; set; }
         public byte[] QRCode { get; set; }
+        public string EquipmentStatus { get; set; }
+
 
 
     }

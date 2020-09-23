@@ -17,7 +17,8 @@ namespace WebServiceHost.Update
 
         public string UpdateComputer(int _id, string _computerName, string _operatingSystem, string _companyFixedAsset,
            string _tagService, string _location, string _user, string _office, string _ip, string _model,
-           string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
+           string _cpu, string _ram, string _hardDrive, string _coments, DateTime warrantyDate, DateTime purchaseDate, 
+           byte[] _barcode, byte[] _qrCode, string _equipmentStatus)
         {
             try
             {
@@ -44,12 +45,14 @@ namespace WebServiceHost.Update
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
                         Barcode = _barcode,
-                        QRCode = _qrCode
+                        QRCode = _qrCode,
+                        EquipmentStatus = _equipmentStatus
+
                     });
 
                     connection.Execute("spUpdate_Computers @Id,@CompterName,@OperatingSystem,@CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@Office,@IP,@ModelComputer,@CPU,@RAM,@HardDrive," +
-                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", computers);
+                                       "@Coments,@WarrantyDate,@PurchaseDate,@Barcode,@QRCode,@EquipmentStatus", computers);
 
                     _loggerUse.InfoLog("Update Computer -> Successful : " + _computerName);
 
@@ -66,7 +69,8 @@ namespace WebServiceHost.Update
         }
         public string UpdateNotebooks(int id, string _notebooksName, string _operatingSystem, string _companyFixedAsset,
             string _tagService, string _location, string _user, string _office, string _ip, string _model,
-            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
+            string _cpu, string _ram, string _hardDrive, string _coments, DateTime warrantyDate, DateTime purchaseDate, 
+            byte[] _barcode, byte[] _qrCode, string _equipmentStatus)
         {
             try
             {
@@ -93,12 +97,14 @@ namespace WebServiceHost.Update
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
                         Barcode = _barcode,
-                        QRCode = _qrCode
+                        QRCode = _qrCode,
+                        EquipmentStatus = _equipmentStatus
+
                     });
 
                     connection.Execute("spUpdate_Notebooks @Id, @NotebooksName,@OperatingSystem,@CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@Office,@IP,@ModelNotebooks,@CPU,@RAM,@HardDrive," +
-                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", notebooks);
+                                       "@Coments,@WarrantyDate,@PurchaseDate,@Barcode,@QRCode,@EquipmentStatus", notebooks);
 
                     _loggerUse.InfoLog("Update Notebooks -> Successful : " + _notebooksName);
 
@@ -114,7 +120,8 @@ namespace WebServiceHost.Update
         }
 
         public string UpdateMonitors(int _id, string _companyFixedAsset, string _tagService, string _location,
-            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
+            string _user, string _model, string _coments, DateTime warrantyDate, DateTime purchaseDate,
+            byte[] _barcode, byte[] _qrCode, string _equipmentStatus)
         {
             try
             {
@@ -135,12 +142,14 @@ namespace WebServiceHost.Update
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
                         Barcode = _barcode,
-                        QRCode = _qrCode
+                        QRCode = _qrCode,
+                        EquipmentStatus = _equipmentStatus
+
                     });
 
                     connection.Execute("spUpdate_Monitors @Id, @CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@ModelMonitors,@Coments," +
-                                       "@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", monitors);
+                                       "@WarrantyDate,@PurchaseDate,@Barcode,@QRCode,@EquipmentStatus", monitors);
 
                     _loggerUse.InfoLog("Update Monitors -> Successful : " + _model);
 

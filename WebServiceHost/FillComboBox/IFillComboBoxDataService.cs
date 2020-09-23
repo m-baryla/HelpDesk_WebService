@@ -41,5 +41,8 @@ namespace WebServiceHost.FillComboBox
         [OperationContract]
         List<string> FillComboBoxUsers();
 
+        [OperationContract]
+        List<string> FillComboBoxEquipmentStatus();
+
     }
 }

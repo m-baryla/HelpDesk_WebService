@@ -21,7 +21,8 @@ namespace WebServiceHost.Insert
 
         public string InsertComputer(string _computerName, string _operatingSystem, string _companyFixedAsset,
             string _tagService, string _location, string _user, string _office, string _ip, string _model,
-            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
+            string _cpu, string _ram, string _hardDrive, string _coments, DateTime warrantyDate, DateTime purchaseDate, 
+            byte[] _barcode, byte[] _qrCode, string _equipmentStatus)
         {
             try
             {
@@ -47,12 +48,14 @@ namespace WebServiceHost.Insert
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
                         Barcode = _barcode,
-                        QRCode = _qrCode
+                        QRCode = _qrCode,
+                        EquipmentStatus = _equipmentStatus
+
                     });
 
                     connection.Execute("spAdd_New_Computer @CompterName,@OperatingSystem,@CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@Office,@IP,@ModelComputer,@CPU,@RAM,@HardDrive," +
-                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", computers);
+                                       "@Coments,@WarrantyDate,@PurchaseDate,@Barcode,@QRCode,@EquipmentStatus", computers);
 
                     _loggerUse.InfoLog("Insert Computer -> Successful : " + _computerName);
 
@@ -69,7 +72,8 @@ namespace WebServiceHost.Insert
         }
         public string InsertNotebooks(string _notebooksName, string _operatingSystem, string _companyFixedAsset,
             string _tagService, string _location, string _user, string _office, string _ip, string _model,
-            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
+            string _cpu, string _ram, string _hardDrive, string _coments, DateTime warrantyDate, DateTime purchaseDate,
+            byte[] _barcode, byte[] _qrCode, string _equipmentStatus)
         {
             try
             {
@@ -95,12 +99,14 @@ namespace WebServiceHost.Insert
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
                         Barcode = _barcode,
-                        QRCode = _qrCode
+                        QRCode = _qrCode,
+                        EquipmentStatus = _equipmentStatus
+
                     });
 
                     connection.Execute("spAdd_New_Notebooks @NotebooksName,@OperatingSystem,@CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@Office,@IP,@ModelNotebooks,@CPU,@RAM,@HardDrive," +
-                                       "@Coments,@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", notebooks);
+                                       "@Coments,@WarrantyDate,@PurchaseDate,@Barcode,@QRCode,@EquipmentStatus", notebooks);
 
 
                     _loggerUse.InfoLog("Insert Notebooks -> Successful : " + _notebooksName);
@@ -116,7 +122,8 @@ namespace WebServiceHost.Insert
             }
         }
         public string InsertMonitors(string _companyFixedAsset, string _tagService, string _location,
-           string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode)
+           string _user, string _model, string _coments, DateTime warrantyDate, DateTime purchaseDate,
+           byte[] _barcode, byte[] _qrCode, string _equipmentStatus)
         {
             try
             {
@@ -135,12 +142,13 @@ namespace WebServiceHost.Insert
                         PurchaseDate = purchaseDate,
                         WarrantyDate = warrantyDate,
                         Barcode = _barcode,
-                        QRCode = _qrCode
+                        QRCode = _qrCode,
+                        EquipmentStatus = _equipmentStatus
                     });
 
                     connection.Execute("spAdd_New_Monitors @CompanyFixedAsset," +
                                        "@TagService,@Location,@User,@ModelMonitors,@Coments," +
-                                       "@PurchaseDate,@WarrantyDate,@Barcode,@QRCode", monitors);
+                                       "@WarrantyDate,@PurchaseDate,@Barcode,@QRCode,@EquipmentStatus", monitors);
 
                     _loggerUse.InfoLog("Insert Monitors -> Successful : " + _model);
 
@@ -385,6 +393,29 @@ namespace WebServiceHost.Insert
                 return "Insert User" + " " + _firstName + " " + _lastName + " " + _job + " " + e.Message;
 
             }
+        }
+        public string InsertComboEquipmentStatus(string _value)
+        {
+            try
+            {
+                using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(_connString)))
+                {
+                    connection.Execute($"spAdd_New_ComboBox_EquipmentStatus @EquipmentStatus = '{_value}'");
+
+                    _loggerUse.InfoLog("Insert ComboBox EquipmentStatus -> Successful :" + _value);
+
+                    return "Insert EquipmentStatus -> Successful :" + _value;
+
+                }
+            }
+            catch (Exception e)
+            {
+                _loggerUse.ErrorLog("Insert ComboBox EquipmentStatus" + " " + _value + " " + e.Message);
+
+                return "Insert EquipmentStatus" + " " + _value + " " + e.Message;
+
+            }
+
         }
     }
 }

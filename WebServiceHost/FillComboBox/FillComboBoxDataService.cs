@@ -82,5 +82,12 @@ namespace WebServiceHost.FillComboBox
                 return connection.Query<string>("select * from vwFillComboBoxUsers").ToList();
             }
         }
+        public List<string> FillComboBoxEquipmentStatus()
+        {
+            using (IDbConnection connection = new SqlConnection(HelperConnection.ConnectionStringValue(ConnString)))
+            {
+                return connection.Query<string>("select * from vwFillComboBoxEquipmentStatus").ToList();
+            }
+        }
     }
 }

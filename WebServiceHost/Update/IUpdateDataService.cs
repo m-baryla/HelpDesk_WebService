@@ -14,16 +14,18 @@ namespace WebServiceHost.Update
         [OperationContract]
         string UpdateComputer(int _id, string _computerName, string _operatingSystem, string _companyFixedAsset,
             string _tagService, string _location, string _user, string _office, string _ip, string _model,
-            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode);
+            string _cpu, string _ram, string _hardDrive, string _coments, DateTime warrantyDate, DateTime purchaseDate, 
+            byte[] _barcode, byte[] _qrCode, string _equipmentStatus);
 
         [OperationContract]
         string UpdateNotebooks(int id, string _notebooksName, string _operatingSystem, string _companyFixedAsset,
             string _tagService, string _location, string _user, string _office, string _ip, string _model,
-            string _cpu, string _ram, string _hardDrive, string _coments, DateTime purchaseDate,
-            DateTime warrantyDate, byte[] _barcode, byte[] _qrCode);
+            string _cpu, string _ram, string _hardDrive, string _coments, DateTime warrantyDate, DateTime purchaseDate,
+            byte[] _barcode, byte[] _qrCode, string _equipmentStatus);
 
         [OperationContract]
         string UpdateMonitors(int _id, string _companyFixedAsset, string _tagService, string _location,
-            string _user, string _model, string _coments, DateTime purchaseDate, DateTime warrantyDate, byte[] _barcode, byte[] _qrCode);
+            string _user, string _model, string _coments, DateTime warrantyDate, DateTime purchaseDate,
+            byte[] _barcode, byte[] _qrCode, string _equipmentStatus);
     }
 }
