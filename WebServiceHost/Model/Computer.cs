@@ -27,8 +27,6 @@ namespace WebServiceHost.Model
         public byte[] QRCode { get; set; }
         public string EquipmentStatus { get; set; }
 
-
-
     }
 
 }
