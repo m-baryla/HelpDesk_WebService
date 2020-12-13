@@ -15,7 +15,7 @@ namespace WebServiceHost.Insert
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "IInsertDataService" in both code and config file together.
     public class InsertDataService : IInsertDataService
     {
-        private readonly string _connString = "HelpDeskDB_Conn_TEST";
+        private readonly string _connString = "HelpDesk_DataBase";
 
         readonly LoggerUseTools _loggerUse = new LoggerUseTools("InsertSourceWebService");
 

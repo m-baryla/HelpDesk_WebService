@@ -18,9 +18,9 @@ namespace LoggerLibrary.Logger
         private readonly int _categoryInfo = 1;
         private readonly int _categoryError = 0;
         private readonly int _categoryWarning = 2;
-        private readonly string _patchInfo = "D:\\Source\\HelpDeskProject\\log_info.txt";
-        private readonly string _patchError = "D:\\Source\\HelpDeskProject\\log_error.txt";
-        private readonly string _patchWarning = "D:\\Source\\HelpDeskProject\\log_warning.txt";
+        private readonly string _patchInfo = "C:\\Logi_WebService\\log_info.txt";
+        private readonly string _patchError = "C:\\Logi_WebService\\log_error.txt";
+        private readonly string _patchWarning = "C:\\Logi_WebService\\log_warning.txt";
 
 
         public void ErrorLog(string measgeError)

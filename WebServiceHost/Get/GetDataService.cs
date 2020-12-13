@@ -10,7 +10,7 @@ namespace WebServiceHost.Get
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "GetDataService" in both code and config file together.
     public class GetDataService : IGetDataService
     {
-        private readonly string ConnString = "HelpDeskDB_Conn_TEST";
+        private readonly string ConnString = "HelpDesk_DataBase";
 
         public List<ComputersDataView> GetAllComputerses()
         {
